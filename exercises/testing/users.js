@@ -18,8 +18,8 @@ const findUser = (id) => new Promise((resolve, reject) => {
 
 // simulate async db call with promise
 const deleteUser = (id) => new Promise((resolve, reject) => {
-  const id = fixId(id)
-  const i = users.findIndex(user => user.id === id)
+  const idToDelete = parseFloat(id)
+  const i = users.findIndex(user => user.id === idToDelete);
 
   if (i < 0) {
     return reject(new Error(`No user with id "${id}"`))
